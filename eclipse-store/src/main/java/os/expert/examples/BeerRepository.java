@@ -12,4 +12,7 @@ public interface BeerRepository extends PageableRepository<EclipseStoreBeer, Str
 
 
     Page<EclipseStoreBeer> findByHopOrderByName(String hope, Pageable pageable);
+    Page<EclipseStoreBeer> findByMaltOrderByName(String malt, Pageable pageable);
+
+    Page<EclipseStoreBeer> findByMaltAndHopOrderByName(String malt, String hop, Pageable pageable);
 }

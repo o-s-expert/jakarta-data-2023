@@ -32,11 +32,21 @@ public class BeerResource {
 
     @GET
     public List<EclipseStoreBeer> findByAll(@QueryParam("page") @DefaultValue("1") long page,
-                                            @QueryParam("hop") @DefaultValue("") String hop){
-        if(hop.isBlank()) {
-            return this.repository.findAll(Pageable.ofPage(page).sortBy(Sort.asc("name"))).content();
+                                            @QueryParam("hop") @DefaultValue("") String hop,
+                                            @QueryParam("malt") @DefaultValue("") String malt){
+
+        if(!hop.isBlank() && !malt.isBlank()){
+            return this.repository.findByMaltAndHopOrderByName(malt, hop, Pageable.ofPage(page)).content();
         }
-        return this.repository.findByHopOrderByName(hop, Pageable.ofPage(page)).content();
+        else if(!hop.isBlank()) {
+            return this.repository.findByHopOrderByName(hop, Pageable.ofPage(page)).content();
+        }
+        else if(!malt.isBlank()) {
+            return this.repository.findByMaltOrderByName(malt, Pageable.ofPage(page)).content();
+        }
+        return this.repository.findAll(Pageable.ofPage(page)
+                        .sortBy(Sort.asc("name")))
+                .content();
     }
 
     @POST
