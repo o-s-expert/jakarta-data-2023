@@ -30,6 +30,11 @@
             <version>${data.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
             <groupId>io.helidon.microprofile.bundles</groupId>
             <artifactId>helidon-microprofile-core</artifactId>
         </dependency>
