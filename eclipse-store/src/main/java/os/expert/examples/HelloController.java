@@ -1,4 +1,4 @@
-package os.expert.examples.eclipse.store;
+package os.expert.examples;
 
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.GET;

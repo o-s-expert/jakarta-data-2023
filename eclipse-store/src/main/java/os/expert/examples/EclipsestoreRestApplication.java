@@ -1,4 +1,4 @@
-package os.expert.examples.eclipse.store;
+package os.expert.examples;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
@@ -6,6 +6,6 @@ import jakarta.ws.rs.core.Application;
 /**
  *
  */
-@ApplicationPath("/data")
+@ApplicationPath("/")
 public class EclipsestoreRestApplication extends Application {
 }
