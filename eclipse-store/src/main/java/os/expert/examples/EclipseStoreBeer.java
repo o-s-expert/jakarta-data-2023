@@ -6,6 +6,7 @@ import jakarta.json.bind.annotation.JsonbVisibility;
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class EclipseStoreBeer implements Beer {
 
+   private String id;
    private String name;
 
     private String style;
@@ -19,6 +20,10 @@ public class EclipseStoreBeer implements Beer {
     private EclipseStoreAddress address;
 
     private  String user;
+
+    public String id() {
+        return id;
+    }
 
     @Override
     public String name() {
