@@ -9,8 +9,8 @@
         <version>3.1.0</version>
         <relativePath/>
     </parent>
-    <groupId>dev.a4j.mastering.data</groupId>
-    <artifactId>chapter-09-microprofile</artifactId>
+    <groupId>os.expert.examples</groupId>
+    <artifactId>eclipse-store</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -19,6 +19,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>os.expert.examples</groupId>
+            <artifactId>entity-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>jakarta.data</groupId>
             <artifactId>jakarta-data-api</artifactId>

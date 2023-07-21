@@ -1,14 +1,11 @@
 
-package dev.a4j.mastering.data;
-
-import java.util.Collections;
+package os.expert.examples;
 
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 import jakarta.ws.rs.PathParam;
 
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

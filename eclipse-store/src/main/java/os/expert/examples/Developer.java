@@ -1,4 +1,4 @@
-package dev.a4j.mastering.data;
+package os.expert.examples;
 
 import jakarta.json.bind.annotation.JsonbCreator;
 import jakarta.json.bind.annotation.JsonbProperty;

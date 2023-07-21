@@ -1,4 +1,4 @@
-package dev.a4j.mastering.data;
+package os.expert.examples;
 
 import jakarta.data.repository.CrudRepository;
 import jakarta.data.repository.Repository;

@@ -1,5 +1,5 @@
 
-package dev.a4j.mastering.data;
+package os.expert.examples;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;

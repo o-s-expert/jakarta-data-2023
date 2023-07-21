@@ -1,4 +1,4 @@
-package dev.a4j.mastering.data;
+package os.expert.examples;
 
 
 public class Message {
