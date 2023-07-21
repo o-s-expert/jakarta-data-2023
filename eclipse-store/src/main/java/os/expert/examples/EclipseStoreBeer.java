@@ -1,5 +1,9 @@
 package os.expert.examples;
 
+
+import jakarta.json.bind.annotation.JsonbVisibility;
+
+@JsonbVisibility(FieldVisibilityStrategy.class)
 public class EclipseStoreBeer implements Beer {
 
    private String name;

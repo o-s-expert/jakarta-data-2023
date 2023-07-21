@@ -1,6 +1,6 @@
 package os.expert.examples;
 
-public class EclipseStoreAddress implements Address{
+public class EclipseStoreAddress implements Address {
 
     private String city;
 
