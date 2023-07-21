@@ -4,6 +4,7 @@ package os.expert.examples;
 import com.github.javafaker.Faker;
 import jakarta.json.bind.annotation.JsonbVisibility;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @JsonbVisibility(FieldVisibilityStrategy.class)
@@ -63,6 +64,33 @@ public class EclipseStoreBeer implements Beer {
         return user;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EclipseStoreBeer that = (EclipseStoreBeer) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Beer{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", style='" + style + '\'' +
+                ", hop='" + hop + '\'' +
+                ", yeast='" + yeast + '\'' +
+                ", malt='" + malt + '\'' +
+                ", address=" + address +
+                ", user='" + user + '\'' +
+                '}';
+    }
+
     public static EclipseStoreBeer of(Faker faker){
         var beer = faker.beer();
         EclipseStoreBeer entity = new EclipseStoreBeer();
@@ -73,6 +101,7 @@ public class EclipseStoreBeer implements Beer {
         entity.yeast = beer.yeast();
         entity.malt = beer.malt();
         entity.user = faker.dragonBall().character();
+        entity.address = EclipseStoreAddress.of(faker);
         return entity;
     }
 }
