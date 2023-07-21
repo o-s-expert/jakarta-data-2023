@@ -1,4 +1,4 @@
-package org.example;
+package os.expert.examples;
 
 /**
  * Hello world!
