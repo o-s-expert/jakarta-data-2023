@@ -31,8 +31,12 @@ public class BeerResource {
 
 
     @GET
-    public List<EclipseStoreBeer> findByAll(@QueryParam("page") @DefaultValue("1") long page){
-        return this.repository.findAll(Pageable.ofPage(page).sortBy(Sort.asc("name"))).content();
+    public List<EclipseStoreBeer> findByAll(@QueryParam("page") @DefaultValue("1") long page,
+                                            @QueryParam("hop") @DefaultValue("") String hop){
+        if(hop.isBlank()) {
+            return this.repository.findAll(Pageable.ofPage(page).sortBy(Sort.asc("name"))).content();
+        }
+        return this.repository.findByHopOrderByName(hop, Pageable.ofPage(page)).content();
     }
 
     @POST
