@@ -91,6 +91,11 @@
                     <artifactId>slf4j-jdk14</artifactId>
                     <version>${slf4j.jdk.version}</version>
                 </dependency>
+                <dependency>
+                    <groupId>os.expert.examples</groupId>
+                    <artifactId>entity-api</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
             </dependencies>
         </profile>
     </profiles>
