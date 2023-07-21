@@ -39,7 +39,8 @@ public class BeerResource {
     public void random() {
         var faker = new Faker();
         for (int index = 0; index < 1_000; index++) {
-
+            var beer = EclipseStoreBeer.of(faker);
+            this.repository.save(beer);
         }
     }
 
