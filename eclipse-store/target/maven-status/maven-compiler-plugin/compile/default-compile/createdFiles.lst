@@ -1,0 +1,10 @@
+dev/a4j/mastering/data/Developer.class
+dev/a4j/mastering/data/Hangar.class
+dev/a4j/mastering/data/Airplane.class
+dev/a4j/mastering/data/DeveloperRepository.class
+dev/a4j/mastering/data/GreetResource.class
+dev/a4j/mastering/data/DeveloperResource.class
+dev/a4j/mastering/data/Message.class
+dev/a4j/mastering/data/GreetingProvider.class
+dev/a4j/mastering/data/SimpleGreetResource.class
+dev/a4j/mastering/data/AirplaneResource.class

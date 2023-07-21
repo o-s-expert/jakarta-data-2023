@@ -1,45 +1,31 @@
-# MicroProfile generated Application
+# microprofile
 
-## Introduction
+Minimal Helidon MP project suitable to start from scratch.
 
-MicroProfile Starter has generated this MicroProfile application for you.
-
-The generation of the executable jar file can be performed by issuing the following command
+## Build and run
 
 
-    mvn clean package
+With JDK17+
+```bash
+mvn package
+java -jar target/chapter-09-microprofile.jar 
+```
 
-This will create an executable jar file **eclipse-store.jar** within the _target_ maven folder. This can be started by executing the following command
+## Exercise the application
+```
+curl -X GET http://localhost:8080/simple-greet
+{"message":"Hello World!"}
+```
 
-    java -jar target/eclipse-store.jar
+```
+curl -X GET http://localhost:8080/greet
+{"message":"Hello World!"}
 
+curl -X GET http://localhost:8080/greet/Joe
+{"message":"Hello Joe!"}
 
+curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
 
-### Liberty Dev Mode
-
-During development, you can use Liberty's development mode (dev mode) to code while observing and testing your changes on the fly.
-With the dev mode, you can code along and watch the change reflected in the running server right away; 
-unit and integration tests are run on pressing Enter in the command terminal; you can attach a debugger to the running server at any time to step through your code.
-
-
-    mvn liberty:dev
-
-
-
-
-
-To launch the test page, open your browser at the following URL
-
-    http://localhost:9080/index.html  
-
-
-
-## Specification examples
-
-By default, there is always the creation of a JAX-RS application class to define the path on which the JAX-RS endpoints are available.
-
-Also, a simple Hello world endpoint is created, have a look at the class **HelloController**.
-
-More information on MicroProfile can be found [here](https://microprofile.io/)
-
-
+curl -X GET http://localhost:8080/greet/Jose
+{"message":"Hola Jose!"}
+```
