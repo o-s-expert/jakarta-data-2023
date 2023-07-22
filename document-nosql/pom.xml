@@ -26,9 +26,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>expert.os.integration</groupId>
-            <artifactId>microstream-jakarta-data</artifactId>
-            <version>0.0.4-SNAPSHOT</version>
+            <groupId>org.eclipse.jnosql.databases</groupId>
+            <artifactId>jnosql-couchbase</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.javafaker</groupId>
