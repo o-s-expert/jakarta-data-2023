@@ -41,6 +41,12 @@ Also, a simple Hello world endpoint is created, have a look at the class **Hello
 More information on MicroProfile can be found [here](https://microprofile.io/)
 
 
+## Running databases
+
+```shell
+docker-compose -f docker-compose.yml up -d
+```
+
 ## Testing the API
 
 Inserting:
