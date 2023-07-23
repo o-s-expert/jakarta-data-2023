@@ -41,13 +41,11 @@ Also, a simple Hello world endpoint is created, have a look at the class **Hello
 More information on MicroProfile can be found [here](https://microprofile.io/)
 
 
-## Running databases
+## Switching between database
 
-```shell
-docker-compose -f docker-compose.yml up -d
-```
+Check the file "microprofile-config.properties" and comment on one of the "jnosql.document.provider" keys.
 
-### Couchbase
+### Couchbase (Default)
 
 Couchbase Server, originally known as Membase, is an open-source, distributed multi-model NoSQL document-oriented database software package optimized for interactive applications. These applications may serve many concurrent users by creating, storing, retrieving, aggregating, manipulating and presenting data.
 
@@ -72,6 +70,21 @@ docker run -d --name db -p 8091-8097:8091-8097 -p 9123:9123 -p 11207:11207 -p 11
 1. Click at "beers"
 1. Add "Hero" and "Villain" as Collection
 1. Go to Query session and execute: CREATE PRIMARY INDEX `#primary` ON `factory`.`_default`.`beer`
+
+
+### MongoDB
+
+MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.
+
+#### Configurations
+
+1. Install docker: https://www.docker.com/
+1. https://hub.docker.com/r/couchbase/server/
+1. Run docker command:
+
+```shell
+docker run -d --name mongodb-instance -p 27017:27017 mongo
+```
 
 
 ## Testing the API
