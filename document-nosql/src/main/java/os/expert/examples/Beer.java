@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Entity("beer")
 @JsonbVisibility(FieldVisibilityStrategy.class)
-public class EclipseStoreBeer implements Beer {
+public class Beer {
 
     @Id
    private String id;
@@ -30,7 +30,7 @@ public class EclipseStoreBeer implements Beer {
     private String malt;
 
     @Column
-    private EclipseStoreAddress address;
+    private Address address;
     @Column
     private  String user;
 
@@ -38,37 +38,30 @@ public class EclipseStoreBeer implements Beer {
         return id;
     }
 
-    @Override
     public String name() {
         return name;
     }
 
-    @Override
     public String style() {
         return style;
     }
 
-    @Override
     public String hop() {
         return hop;
     }
 
-    @Override
     public String yeast() {
         return yeast;
     }
 
-    @Override
     public String malt() {
         return malt;
     }
 
-    @Override
-    public EclipseStoreAddress address() {
+    public Address address() {
         return address;
     }
 
-    @Override
     public String user() {
         return user;
     }
@@ -77,7 +70,7 @@ public class EclipseStoreBeer implements Beer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EclipseStoreBeer that = (EclipseStoreBeer) o;
+        Beer that = (Beer) o;
         return Objects.equals(id, that.id);
     }
 
@@ -100,9 +93,9 @@ public class EclipseStoreBeer implements Beer {
                 '}';
     }
 
-    public static EclipseStoreBeer of(Faker faker){
+    public static Beer of(Faker faker){
         var beer = faker.beer();
-        EclipseStoreBeer entity = new EclipseStoreBeer();
+        Beer entity = new Beer();
         entity.id = UUID.randomUUID().toString();
         entity.name = beer.name();
         entity.style = beer.style();
@@ -110,7 +103,7 @@ public class EclipseStoreBeer implements Beer {
         entity.yeast = beer.yeast();
         entity.malt = beer.malt();
         entity.user = faker.dragonBall().character();
-        entity.address = EclipseStoreAddress.of(faker);
+        entity.address = Address.of(faker);
         return entity;
     }
 }

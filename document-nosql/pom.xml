@@ -41,11 +41,6 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-        <dependency>
-            <groupId>os.expert.examples</groupId>
-            <artifactId>entity-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
     </dependencies>
     <build>
         <finalName>document-nosql</finalName>
