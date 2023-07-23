@@ -3,14 +3,19 @@ package os.expert.examples;
 
 import com.github.javafaker.Faker;
 import jakarta.json.bind.annotation.JsonbVisibility;
+import jakarta.nosql.Column;
+import jakarta.nosql.Entity;
 
 import java.util.Objects;
 
+@Entity
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class EclipseStoreAddress implements Address {
 
+    @Column
     private String city;
 
+    @Column
     private String country;
     @Override
     public String city() {

@@ -71,7 +71,7 @@ docker run -d --name db -p 8091-8097:8091-8097 -p 9123:9123 -p 11207:11207 -p 11
 1. Create Bucket "beers" using the "Add Bucket" Option
 1. Click at "beers"
 1. Add "Hero" and "Villain" as Collection
-1. Go to Query session and execute: CREATE PRIMARY INDEX `#primary` ON `heroes`.`_default`.`Hero`
+1. Go to Query session and execute: CREATE PRIMARY INDEX `#primary` ON `factory`.`_default`.`beer`
 
 
 ## Testing the API
