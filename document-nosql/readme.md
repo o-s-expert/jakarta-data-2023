@@ -47,6 +47,33 @@ More information on MicroProfile can be found [here](https://microprofile.io/)
 docker-compose -f docker-compose.yml up -d
 ```
 
+### Couchbase
+
+Couchbase Server, originally known as Membase, is an open-source, distributed multi-model NoSQL document-oriented database software package optimized for interactive applications. These applications may serve many concurrent users by creating, storing, retrieving, aggregating, manipulating and presenting data.
+
+#### Configurations
+
+1. Install docker: https://www.docker.com/
+1. https://hub.docker.com/r/couchbase/server/
+1. Run docker command:
+
+```shell
+docker run -d --name db -p 8091-8097:8091-8097 -p 9123:9123 -p 11207:11207 -p 11210:11210 -p 11280:11280 -p 18091-18097:18091-18097 couchbase
+```
+
+1. Access: http://localhost:8091/ui/index.html
+1. Select the option "Setup New Cluster"
+1. Define "root" as Admin username
+1. Define "123456" as Password
+1. Define "localhost" as Cluster Name
+1. Accept the terms and conditions
+1. Go to "Buckets" session
+1. Create Bucket "heroes" using the "Add Bucket" Option
+1. Click at "heores"
+1. Add "Hero" and "Villain" as Collection
+1. Go to Query session and execute: CREATE PRIMARY INDEX `#primary` ON `heroes`.`_default`.`Hero`
+
+
 ## Testing the API
 
 Inserting:

@@ -8,6 +8,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.jnosql.mapping.Database;
+import org.eclipse.jnosql.mapping.DatabaseType;
 
 import java.util.List;
 
@@ -17,17 +19,9 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class BeerResource {
 
-    private final BeerRepository repository;
-
     @Inject
-    public BeerResource(BeerRepository repository) {
-        this.repository = repository;
-    }
-
-    @Deprecated
-    BeerResource() {
-        this(null);
-    }
+    @Database(DatabaseType.DOCUMENT)
+    private BeerRepository repository;
 
 
     @GET
