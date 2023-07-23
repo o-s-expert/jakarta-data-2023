@@ -10,7 +10,7 @@ import jakarta.nosql.Id;
 import java.util.Objects;
 import java.util.UUID;
 
-@Entity
+@Entity("beer")
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class EclipseStoreBeer implements Beer {
 

@@ -68,8 +68,8 @@ docker run -d --name db -p 8091-8097:8091-8097 -p 9123:9123 -p 11207:11207 -p 11
 1. Define "localhost" as Cluster Name
 1. Accept the terms and conditions
 1. Go to "Buckets" session
-1. Create Bucket "heroes" using the "Add Bucket" Option
-1. Click at "heores"
+1. Create Bucket "beers" using the "Add Bucket" Option
+1. Click at "beers"
 1. Add "Hero" and "Villain" as Collection
 1. Go to Query session and execute: CREATE PRIMARY INDEX `#primary` ON `heroes`.`_default`.`Hero`
 
