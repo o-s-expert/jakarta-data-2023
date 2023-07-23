@@ -16,6 +16,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <final.name>document-nosql</final.name>
         <slf4j.api.version>1.7.30</slf4j.api.version>
+        <jnosql.version>1.0.1-SNAPSHOT</jnosql.version>
     </properties>
     <dependencies>
         <dependency>
@@ -28,7 +29,12 @@
         <dependency>
             <groupId>org.eclipse.jnosql.databases</groupId>
             <artifactId>jnosql-couchbase</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>${jnosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.databases</groupId>
+            <artifactId>jnosql-mongodb</artifactId>
+            <version>${jnosql.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.javafaker</groupId>
