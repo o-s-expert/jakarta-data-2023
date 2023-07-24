@@ -10,7 +10,6 @@
     <name>Jakarta Data sample</name>
 
     <modules>
-        <module>entity-api</module>
         <module>eclipse-store</module>
         <module>document-nosql</module>
     </modules>
