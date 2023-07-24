@@ -12,6 +12,7 @@
     <modules>
         <module>eclipse-store</module>
         <module>document-nosql</module>
+        <module>jakarta-persistence</module>
     </modules>
     
 </project>
