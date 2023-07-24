@@ -12,8 +12,7 @@ import java.util.Objects;
 public class Beer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     @Column
    private String name;
@@ -33,7 +32,7 @@ public class Beer {
     @Column
     private  String user;
 
-    public Long id() {
+    public String id() {
         return id;
     }
 

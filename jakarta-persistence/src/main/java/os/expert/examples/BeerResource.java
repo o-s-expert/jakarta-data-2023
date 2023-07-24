@@ -10,6 +10,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
+import java.util.UUID;
 
 @ApplicationScoped
 @Path("beers")
@@ -56,7 +57,7 @@ public class BeerResource {
 
     @DELETE
     @Path("{id}")
-    public void deleteById(@PathParam("id") Long id){
+    public void deleteById(@PathParam("id") String id){
         this.repository.deleteById(id);
     }
 
