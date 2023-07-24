@@ -31,22 +31,18 @@ public class BeerResource {
 
 
     @GET
-    public List<Beer> findByAll(@QueryParam("page") @DefaultValue("1") long page,
-                                @QueryParam("hop") @DefaultValue("") String hop,
-                                @QueryParam("malt") @DefaultValue("") String malt){
+    public List<Beer> findByAll(@BeanParam BeerParam param){
 
-        if(!hop.isBlank() && !malt.isBlank()){
-            return this.repository.findByMaltAndHopOrderByName(malt, hop, Pageable.ofPage(page)).content();
+        if(param.isMaltAndHopQuery()){
+            return this.repository.findByMaltAndHopOrderByName(param.malt(), param.hop(), param.page()).content();
         }
-        else if(!hop.isBlank()) {
-            return this.repository.findByHopOrderByName(hop, Pageable.ofPage(page)).content();
+        else if(param.isHopQuery()) {
+            return this.repository.findByHopOrderByName(param.hop(), param.page()).content();
         }
-        else if(!malt.isBlank()) {
-            return this.repository.findByMaltOrderByName(malt, Pageable.ofPage(page)).content();
+        else if(param.isMaltQuery()) {
+            return this.repository.findByMaltOrderByName(param.malt(), param.page()).content();
         }
-        return this.repository.findAll(Pageable.ofPage(page)
-                        .sortBy(Sort.asc("name")))
-                .content();
+        return this.repository.findAll(param.page().sortBy(Sort.asc("name"))).content();
     }
 
     @POST
