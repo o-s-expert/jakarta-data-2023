@@ -16,8 +16,7 @@ public class Beer {
 
     @Id
    private String id;
-
-    @Column
+   @Column
    private String name;
 
     @Column
