@@ -14,7 +14,7 @@
         <jaeger.client.version>1.5.0</jaeger.client.version>
         <slf4j.jdk.version>1.7.30</slf4j.jdk.version>
         <maven.compiler.source>17</maven.compiler.source>
-        <final.name>eclipse-store</final.name>
+        <final.name>jakarta-persistence</final.name>
         <slf4j.api.version>1.7.30</slf4j.api.version>
     </properties>
     <dependencies>
@@ -37,7 +37,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>eclipse-store</finalName>
+        <finalName>jakarta-persistence</finalName>
     </build>
     <profiles>
         <profile>

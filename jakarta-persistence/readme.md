@@ -12,7 +12,7 @@ mvn clean package
 This will create an executable jar file **eclipse-store.jar** within the _target_ maven folder. This can be started by executing the following command
 
 ```shell
-java -jar target/eclipse-store.jar
+java -jar target/jakarta-persistence.jar
 ```
 
 ### Liberty Dev Mode
