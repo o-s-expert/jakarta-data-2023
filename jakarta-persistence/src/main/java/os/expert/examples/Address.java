@@ -1,17 +1,27 @@
 package os.expert.examples;
 
 
+import com.github.javafaker.Beer;
 import com.github.javafaker.Faker;
 import jakarta.json.bind.annotation.JsonbVisibility;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
+@Entity
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class Address {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column
     private String city;
 
+    @Column
     private String country;
+
     public String city() {
         return city;
     }

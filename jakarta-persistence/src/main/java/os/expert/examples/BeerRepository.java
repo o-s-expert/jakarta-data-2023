@@ -6,7 +6,7 @@ import jakarta.data.repository.PageableRepository;
 import jakarta.data.repository.Repository;
 
 @Repository
-public interface BeerRepository extends PageableRepository<Beer, String> {
+public interface BeerRepository extends PageableRepository<Beer, Long> {
 
 
     Page<Beer> findByHopOrderByName(String hope, Pageable pageable);

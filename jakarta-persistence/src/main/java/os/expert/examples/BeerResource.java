@@ -56,7 +56,7 @@ public class BeerResource {
 
     @DELETE
     @Path("{id}")
-    public void deleteById(@PathParam("id") String id){
+    public void deleteById(@PathParam("id") Long id){
         this.repository.deleteById(id);
     }
 

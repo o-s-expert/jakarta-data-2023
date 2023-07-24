@@ -3,19 +3,17 @@ package os.expert.examples;
 
 import com.github.javafaker.Faker;
 import jakarta.json.bind.annotation.JsonbVisibility;
-import jakarta.nosql.Column;
-import jakarta.nosql.Entity;
-import jakarta.nosql.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class Beer {
 
     @Id
-   private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column
    private String name;
@@ -29,12 +27,13 @@ public class Beer {
     @Column
     private String malt;
 
-    @Column
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     @Column
     private  String user;
 
-    public String id() {
+    public Long id() {
         return id;
     }
 
@@ -96,7 +95,6 @@ public class Beer {
     public static Beer of(Faker faker){
         var beer = faker.beer();
         Beer entity = new Beer();
-        entity.id = UUID.randomUUID().toString();
         entity.name = beer.name();
         entity.style = beer.style();
         entity.hop = beer.hop();

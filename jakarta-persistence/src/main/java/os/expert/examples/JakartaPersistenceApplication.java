@@ -7,5 +7,5 @@ import jakarta.ws.rs.core.Application;
  *
  */
 @ApplicationPath("/")
-public class EclipsestoreRestApplication extends Application {
+public class JakartaPersistenceApplication extends Application {
 }
