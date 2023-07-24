@@ -7,17 +7,15 @@ import jakarta.json.bind.annotation.JsonbVisibility;
 import java.util.Objects;
 
 @JsonbVisibility(FieldVisibilityStrategy.class)
-public class EclipseStoreAddress implements Address {
+public class Address {
 
     private String city;
 
     private String country;
-    @Override
     public String city() {
         return city;
     }
 
-    @Override
     public String country() {
         return country;
     }
@@ -27,7 +25,7 @@ public class EclipseStoreAddress implements Address {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EclipseStoreAddress address = (EclipseStoreAddress) o;
+        Address address = (Address) o;
         return Objects.equals(city, address.city) && Objects.equals(country, address.country);
     }
 
@@ -44,8 +42,8 @@ public class EclipseStoreAddress implements Address {
                 '}';
     }
 
-    public static EclipseStoreAddress of(Faker faker){
-        EclipseStoreAddress entity = new EclipseStoreAddress();
+    public static Address of(Faker faker){
+        Address entity = new Address();
         var address = faker.address();
         entity.city = address.city();
         entity.country = address.country();

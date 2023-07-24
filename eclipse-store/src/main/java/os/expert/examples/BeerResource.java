@@ -31,9 +31,9 @@ public class BeerResource {
 
 
     @GET
-    public List<EclipseStoreBeer> findByAll(@QueryParam("page") @DefaultValue("1") long page,
-                                            @QueryParam("hop") @DefaultValue("") String hop,
-                                            @QueryParam("malt") @DefaultValue("") String malt){
+    public List<Beer> findByAll(@QueryParam("page") @DefaultValue("1") long page,
+                                @QueryParam("hop") @DefaultValue("") String hop,
+                                @QueryParam("malt") @DefaultValue("") String malt){
 
         if(!hop.isBlank() && !malt.isBlank()){
             return this.repository.findByMaltAndHopOrderByName(malt, hop, Pageable.ofPage(page)).content();
@@ -50,7 +50,7 @@ public class BeerResource {
     }
 
     @POST
-    public void create(EclipseStoreBeer beer){
+    public void create(Beer beer){
         this.repository.save(beer);
     }
 
@@ -65,7 +65,7 @@ public class BeerResource {
     public void random() {
         var faker = new Faker();
         for (int index = 0; index < 1_000; index++) {
-            var beer = EclipseStoreBeer.of(faker);
+            var beer = Beer.of(faker);
             this.repository.save(beer);
         }
     }
