@@ -21,3 +21,11 @@ git clone git@github.com:ultimate-engineer/jakarta-data-2023.git
 ** *Eclipse Store Project*: No additional installations are required.
 
 * Open the project in your preferred IDE.
+
+
+== Project Structure
+The project contains three applications, each located in separate directories:
+
+* link:jakarta-persistence[jakarta-persistence]: Application using a relational database with Postgresql.
+* link:document-nosql[document-nosql]: Application using a NoSQL database with Couchbase and MongoDB.
+* link:eclipse-store[eclipse-store]: Application using Eclipse Store.
