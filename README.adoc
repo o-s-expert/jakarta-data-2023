@@ -29,3 +29,11 @@ The project contains three applications, each located in separate directories:
 * link:jakarta-persistence[jakarta-persistence]: Application using a relational database with Postgresql.
 * link:document-nosql[document-nosql]: Application using a NoSQL database with Couchbase and MongoDB.
 * link:eclipse-store[eclipse-store]: Application using Eclipse Store.
+
+== Contributing
+
+This project is open-source, and contributions are welcome. If you find any issues or want to add enhancements, feel free to open a pull request.
+
+== Resources
+
+For more information about Jakarta Data, you can refer to the official GitHub repository: https://github.com/jakartaee/data
