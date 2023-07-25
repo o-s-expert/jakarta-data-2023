@@ -3,6 +3,8 @@
 
 This project demonstrates the power of Jakarta Data in creating three applications using the same model but with three different databases. Jakarta Data simplifies data integration and persistence, allowing seamless database interactions. The applications in this project showcase the usage of Jakarta Data with three types of databases:
 
+image::pictures/server.png[]
+
 == Getting Started
 To get started with the project, follow these steps:
 
