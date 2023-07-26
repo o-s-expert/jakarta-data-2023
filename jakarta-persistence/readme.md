@@ -40,6 +40,21 @@ Also, a simple Hello world endpoint is created, have a look at the class **Hello
 
 More information on MicroProfile can be found [here](https://microprofile.io/)
 
+### PostgreSQL
+
+PostgreSQL is an open-source object-relational database system.
+
+#### Configurations
+
+1. Install docker: https://www.docker.com/
+1. https://hub.docker.com/_/postgres
+1. Run docker command:
+
+```shell
+docker pull postgres:15.3
+docker run -e POSTGRES_PASSWORD=openliberty -p 5432:5432 -d postgres
+```
+
 
 ## Testing the API
 

@@ -2,12 +2,14 @@
 <server description="${project.name}">
 
     <featureManager>
-        <feature>microProfile-5.0</feature>
-        
+        <feature>microProfile-6.0</feature>
+        <feature>data-1.0</feature>
+        <feature>persistence-3.1</feature>
     </featureManager>
     
 
     <httpEndpoint id="defaultHttpEndpoint"
+                    host="*"
                   httpPort="9080"
                   httpsPort="9443"/>
 
@@ -22,5 +24,14 @@
 
     <!-- The MP JWT configuration that injects the caller's JWT into a ResourceScoped bean for inspection. -->
     <mpJwt id="jwtUserConsumer" keyName="theKeyId" audiences="targetService" issuer="${jwt.issuer}"/>
+
+    <library id="PostgresLib">
+		<fileset dir="${server.config.dir}/lib/postgres" includes="*.jar"/>
+	</library>
+
+	<dataSource id="DefaultDataSource" jndiName="jdbc/postgres">
+		<jdbcDriver libraryRef="PostgresLib"/>
+		<properties.postgresql databaseName="postgres" serverName="localhost" portNumber="5432" user="postgres" password="openliberty"/>
+	</dataSource>
 
 </server>
