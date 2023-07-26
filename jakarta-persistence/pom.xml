@@ -16,6 +16,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <final.name>jakarta-persistence</final.name>
         <slf4j.api.version>1.7.30</slf4j.api.version>
+        <version.openliberty-group>io.openliberty.beta</version.openliberty-group>
+        <version.openliberty-runtime>23.0.0.6-beta</version.openliberty-runtime>
     </properties>
     <dependencies>
         <dependency>
@@ -82,12 +84,29 @@
                         </executions>
                         <configuration>
                             <include>runnable</include>
+                            <assemblyArtifact>
+                                <groupId>${version.openliberty-group}</groupId>
+                                <artifactId>openliberty-runtime</artifactId>
+                                <version>${version.openliberty-runtime}</version>
+                                <type>zip</type>
+                            </assemblyArtifact>
                             <serverName>${final.name}</serverName>
                             <bootstrapProperties>
                                 <project.name>${final.name}</project.name>
                                 <jwt.issuer>https://server.example.com</jwt.issuer>
                                 <app.context.root>/</app.context.root>
                             </bootstrapProperties>
+                            <copyDependencies>
+                                <dependencyGroup>
+                                    <!-- Relative to server config directory -->
+                                    <location>lib/postgres</location>
+                                    <dependency>
+                                        <groupId>org.postgresql</groupId>
+                                        <artifactId>postgresql</artifactId>
+                                        <version>42.6.0</version>
+                                    </dependency>
+                                </dependencyGroup>
+                            </copyDependencies>
                         </configuration>
                     </plugin>
                 </plugins>

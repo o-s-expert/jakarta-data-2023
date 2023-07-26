@@ -1,7 +1,6 @@
 package os.expert.examples;
 
 
-import com.github.javafaker.Beer;
 import com.github.javafaker.Faker;
 import jakarta.json.bind.annotation.JsonbVisibility;
 import jakarta.persistence.*;
