@@ -7,8 +7,11 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.jnosql.mapping.Database;
 
 import java.util.List;
+
+import static org.eclipse.jnosql.mapping.DatabaseType.DOCUMENT;
 
 @ApplicationScoped
 @Path("beers")
@@ -16,10 +19,10 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class BeerResource {
 
-    private final BeerRepository repository;
+    private BeerRepository repository;
 
     @Inject
-    public BeerResource(BeerRepository repository) {
+    public BeerResource(@Database(DOCUMENT) BeerRepository repository) {
         this.repository = repository;
     }
 
