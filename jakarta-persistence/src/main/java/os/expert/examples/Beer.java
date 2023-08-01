@@ -12,7 +12,8 @@ import java.util.Objects;
 public class Beer {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column
    private String name;
@@ -29,10 +30,10 @@ public class Beer {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-    @Column
+    @Column(name = "BEERUSER") //USER is reserved in Postgres
     private  String user;
 
-    public String id() {
+    public long id() {
         return id;
     }
 
@@ -94,13 +95,25 @@ public class Beer {
     public static Beer of(Faker faker){
         var beer = faker.beer();
         Beer entity = new Beer();
-        entity.name = beer.name();
-        entity.style = beer.style();
-        entity.hop = beer.hop();
-        entity.yeast = beer.yeast();
-        entity.malt = beer.malt();
-        entity.user = faker.dragonBall().character();
+        entity.name = stripUnicode(beer.name());
+        entity.style = stripUnicode(beer.style());
+        entity.hop = stripUnicode(beer.hop());
+        entity.yeast = stripUnicode(beer.yeast());
+        entity.malt = stripUnicode(beer.malt());
+        entity.user = stripUnicode(faker.dragonBall().character());
         entity.address = Address.of(faker);
         return entity;
+    }
+
+    //OpenLiberty's JPA implemenation doesn't allow Unicode on Postgres
+    //This is temporary until that can be fixed and released.
+    public static String stripUnicode(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (int c : s.toCharArray()) {
+            if (c < 128) {
+                sb.append((char)c);
+            }
+        }
+        return sb.toString();
     }
 }
