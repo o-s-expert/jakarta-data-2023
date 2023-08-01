@@ -54,8 +54,8 @@ public class Address {
     public static Address of(Faker faker){
         Address entity = new Address();
         var address = faker.address();
-        entity.city = address.city();
-        entity.country = address.country();
+        entity.city = Beer.stripUnicode(address.city());
+        entity.country = Beer.stripUnicode(address.country());
         return entity;
     }
 
