@@ -1,10 +1,10 @@
 package os.expert.examples;
 
 
-import com.github.javafaker.Faker;
 import jakarta.json.bind.annotation.JsonbVisibility;
 import jakarta.nosql.Column;
 import jakarta.nosql.Entity;
+import net.datafaker.Faker;
 
 import java.util.Objects;
 

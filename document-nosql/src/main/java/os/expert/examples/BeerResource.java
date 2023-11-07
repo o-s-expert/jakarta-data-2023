@@ -1,12 +1,12 @@
 package os.expert.examples;
 
 
-import com.github.javafaker.Faker;
 import jakarta.data.repository.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import net.datafaker.Faker;
 import org.eclipse.jnosql.mapping.Database;
 
 import java.util.List;
